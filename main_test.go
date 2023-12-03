@@ -53,3 +53,12 @@ func TestDay01(t *testing.T) {
 func BenchmarkDay01(b *testing.B) {
 	ProblemBenchmarkRunner(b, Day01{filePath: "inputs/day01/problem.txt"})
 }
+
+func TestDay02(t *testing.T) {
+	ProblemTestRunner(t, Day02{filePath: "inputs/day02/test01.txt"}, 8, 2286)
+	ProblemTestRunner(t, Day02{filePath: "inputs/day02/problem.txt"}, 2207, 62241)
+}
+
+func BenchmarkDay02(b *testing.B) {
+	ProblemBenchmarkRunner(b, Day02{filePath: "inputs/day02/problem.txt"})
+}

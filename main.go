@@ -64,4 +64,5 @@ func solveProblem(problem Problem) {
 
 func main() {
 	solveProblem(Day01{filePath: "inputs/day01/problem.txt"})
+	solveProblem(Day02{filePath: "inputs/day02/problem.txt"})
 }
