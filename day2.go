@@ -39,18 +39,13 @@ func (Day2) Part1(lines []string) (int, error) {
 			for _, pair := range colorFreqPairs {
 				freq, color, _ := strings.Cut(pair, " ")
 				num, _ := strconv.Atoi(freq)
-				if existing, ok := colorFrequency[color]; ok {
-					colorFrequency[color] = existing + num
-				} else {
-					colorFrequency[color] = num
-				}
+				colorFrequency[color] += num
 			}
 
 			// evaluate round
 			for color, limit := range colorLimits {
 				existing, ok := colorFrequency[color]
 				if ok && existing > limit {
-					// fmt.Println("Game", gameId, "adding color", color, "due to limit being", limit)
 					limitReached = true
 					break
 				}
@@ -81,11 +76,7 @@ func (Day2) Part2(lines []string) (int, error) {
 			for _, pair := range colorFreqPairs {
 				freq, color, _ := strings.Cut(pair, " ")
 				num, _ := strconv.Atoi(freq)
-				if existing, ok := colorFrequency[color]; ok {
-					colorFrequency[color] = existing + num
-				} else {
-					colorFrequency[color] = num
-				}
+				colorFrequency[color] += num
 			}
 
 			// evaluate round

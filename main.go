@@ -15,12 +15,6 @@ type Problem interface {
 	Part2(lines []string) (int, error)
 }
 
-func handleErr(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
 func readLines(filePath string) ([]string, error) {
 	var lines []string
 	file, err := os.Open(filePath)
@@ -39,22 +33,27 @@ func readLines(filePath string) ([]string, error) {
 func solve(problem Problem) {
 	start := time.Now()
 	lines, err := readLines(problem.FilePath())
-	handleErr(err)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	p1Start := time.Now()
 	p1Val, err := problem.Part1(lines)
-	p1Duration := time.Now().Sub(p1Start)
-	handleErr(err)
+	p1Duration := time.Since(p1Start)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	p2Start := time.Now()
 	p2Val, err := problem.Part2(lines)
-	p2Duration := time.Now().Sub(p2Start)
-	handleErr(err)
+	p2Duration := time.Since(p2Start)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	end := time.Now()
 	fmt.Printf("Finished %s in %s: P1=%d (%s) P2=%d (%s)\n",
 		problem.Name(),
-		end.Sub(start),
+		time.Since(start),
 		p1Val,
 		p1Duration,
 		p2Val,
