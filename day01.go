@@ -18,6 +18,8 @@ var digitWordMap = map[string]int{
 	"nine":  9,
 }
 
+var notFoundErr = errors.New("404: Not found")
+
 type Day01 struct {
 	filePath string
 }
@@ -65,7 +67,7 @@ func (Day01) Part2(lines []string) (int, error) {
 				return val, nil
 			}
 		}
-		return 0, errors.New("Not found")
+		return 0, notFoundErr
 	}
 	calculateLine := func(line string) int {
 		first_digit := 0
