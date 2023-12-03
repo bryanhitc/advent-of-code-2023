@@ -59,6 +59,15 @@ func TestDay2(t *testing.T) {
 	runTest(t, Day2{filePath: "inputs/day2/problem.txt"}, 2207, 62241)
 }
 
-func BenchmarkDay02(b *testing.B) {
+func BenchmarkDay2(b *testing.B) {
 	runBench(b, Day2{filePath: "inputs/day2/problem.txt"})
+}
+
+func TestDay3(t *testing.T) {
+	runTest(t, Day3{filePath: "inputs/day3/test1.txt"}, 4361, 467835)
+	runTest(t, Day3{filePath: "inputs/day3/problem.txt"}, 528819, 80403602)
+}
+
+func BenchmarkDay3(b *testing.B) {
+	runBench(b, Day3{filePath: "inputs/day3/problem.txt"})
 }
