@@ -44,21 +44,21 @@ func runBench(b *testing.B, problem Problem) {
 	})
 }
 
-func TestDay01(t *testing.T) {
-	runTest(t, Day01{filePath: "inputs/day01/test01.txt"}, 142, 142)
-	runTest(t, Day01{filePath: "inputs/day01/test02.txt"}, 209, 281)
-	runTest(t, Day01{filePath: "inputs/day01/problem.txt"}, 54388, 53515)
+func TestDay1(t *testing.T) {
+	runTest(t, Day1{filePath: "inputs/day1/test1.txt"}, 142, 142)
+	runTest(t, Day1{filePath: "inputs/day1/test2.txt"}, 209, 281)
+	runTest(t, Day1{filePath: "inputs/day1/problem.txt"}, 54388, 53515)
 }
 
-func BenchmarkDay01(b *testing.B) {
-	runBench(b, Day01{filePath: "inputs/day01/problem.txt"})
+func BenchmarkDay1(b *testing.B) {
+	runBench(b, Day1{filePath: "inputs/day1/problem.txt"})
 }
 
-func TestDay02(t *testing.T) {
-	runTest(t, Day02{filePath: "inputs/day02/test01.txt"}, 8, 2286)
-	runTest(t, Day02{filePath: "inputs/day02/problem.txt"}, 2207, 62241)
+func TestDay2(t *testing.T) {
+	runTest(t, Day2{filePath: "inputs/day2/test1.txt"}, 8, 2286)
+	runTest(t, Day2{filePath: "inputs/day2/problem.txt"}, 2207, 62241)
 }
 
 func BenchmarkDay02(b *testing.B) {
-	runBench(b, Day02{filePath: "inputs/day02/problem.txt"})
+	runBench(b, Day2{filePath: "inputs/day2/problem.txt"})
 }

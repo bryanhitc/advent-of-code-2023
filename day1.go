@@ -20,17 +20,17 @@ var digitWordMap = map[string]int{
 
 var notFoundErr = errors.New("404: Not found")
 
-type Day01 struct {
+type Day1 struct {
 	filePath string
 }
 
-func (Day01) Name() string {
-	return "day01"
+func (Day1) Name() string {
+	return "day1"
 }
-func (day Day01) FilePath() string {
+func (day Day1) FilePath() string {
 	return day.filePath
 }
-func (Day01) Part1(lines []string) (int, error) {
+func (Day1) Part1(lines []string) (int, error) {
 	calculateLine := func(line string) int {
 		first_digit := 0
 		last_digit := 0
@@ -55,7 +55,7 @@ func (Day01) Part1(lines []string) (int, error) {
 	}
 	return total, nil
 }
-func (Day01) Part2(lines []string) (int, error) {
+func (Day1) Part2(lines []string) (int, error) {
 	extractDigit := func(line string, i int, char rune) (int, error) {
 		if unicode.IsDigit(char) {
 			return int(char - '0'), nil
