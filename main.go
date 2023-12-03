@@ -36,7 +36,7 @@ func readLines(filePath string) ([]string, error) {
 	return lines, scanner.Err()
 }
 
-func solveProblem(problem Problem) {
+func solve(problem Problem) {
 	start := time.Now()
 	lines, err := readLines(problem.FilePath())
 	handleErr(err)
@@ -63,6 +63,6 @@ func solveProblem(problem Problem) {
 }
 
 func main() {
-	solveProblem(Day01{filePath: "inputs/day01/problem.txt"})
-	solveProblem(Day02{filePath: "inputs/day02/problem.txt"})
+	solve(Day01{filePath: "inputs/day01/problem.txt"})
+	solve(Day02{filePath: "inputs/day02/problem.txt"})
 }

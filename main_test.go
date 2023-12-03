@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func ProblemTestRunner(t *testing.T, problem Problem, expectedPart1 int, expectedPart2 int) {
+func runTest(t *testing.T, problem Problem, expectedPart1 int, expectedPart2 int) {
 	lines, err := readLines(problem.FilePath())
 	if err != nil {
 		t.Fatalf("Failed to read input: %s", problem.FilePath())
@@ -27,7 +27,7 @@ func ProblemTestRunner(t *testing.T, problem Problem, expectedPart1 int, expecte
 	}
 }
 
-func ProblemBenchmarkRunner(b *testing.B, problem Problem) {
+func runBench(b *testing.B, problem Problem) {
 	lines, err := readLines(problem.FilePath())
 	if err != nil {
 		b.Fatalf("Failed to read input: %s", problem.FilePath())
@@ -45,20 +45,20 @@ func ProblemBenchmarkRunner(b *testing.B, problem Problem) {
 }
 
 func TestDay01(t *testing.T) {
-	ProblemTestRunner(t, Day01{filePath: "inputs/day01/test01.txt"}, 142, 142)
-	ProblemTestRunner(t, Day01{filePath: "inputs/day01/test02.txt"}, 209, 281)
-	ProblemTestRunner(t, Day01{filePath: "inputs/day01/problem.txt"}, 54388, 53515)
+	runTest(t, Day01{filePath: "inputs/day01/test01.txt"}, 142, 142)
+	runTest(t, Day01{filePath: "inputs/day01/test02.txt"}, 209, 281)
+	runTest(t, Day01{filePath: "inputs/day01/problem.txt"}, 54388, 53515)
 }
 
 func BenchmarkDay01(b *testing.B) {
-	ProblemBenchmarkRunner(b, Day01{filePath: "inputs/day01/problem.txt"})
+	runBench(b, Day01{filePath: "inputs/day01/problem.txt"})
 }
 
 func TestDay02(t *testing.T) {
-	ProblemTestRunner(t, Day02{filePath: "inputs/day02/test01.txt"}, 8, 2286)
-	ProblemTestRunner(t, Day02{filePath: "inputs/day02/problem.txt"}, 2207, 62241)
+	runTest(t, Day02{filePath: "inputs/day02/test01.txt"}, 8, 2286)
+	runTest(t, Day02{filePath: "inputs/day02/problem.txt"}, 2207, 62241)
 }
 
 func BenchmarkDay02(b *testing.B) {
-	ProblemBenchmarkRunner(b, Day02{filePath: "inputs/day02/problem.txt"})
+	runBench(b, Day02{filePath: "inputs/day02/problem.txt"})
 }
