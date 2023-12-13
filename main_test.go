@@ -71,3 +71,12 @@ func TestDay3(t *testing.T) {
 func BenchmarkDay3(b *testing.B) {
 	runBench(b, Day3{filePath: "inputs/day3/problem.txt"})
 }
+
+func TestDay4(t *testing.T) {
+	runTest(t, Day4{filePath: "inputs/day4/test1.txt"}, 13, 30)
+	runTest(t, Day4{filePath: "inputs/day4/problem.txt"}, 25571, 8805731)
+}
+
+func BenchmarkDay4(b *testing.B) {
+	runBench(b, Day4{filePath: "inputs/day4/problem.txt"})
+}

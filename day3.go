@@ -26,8 +26,6 @@ func isDigit(char byte) bool {
 	return char >= byte('0') && char <= byte('9')
 }
 
-type Empty struct{}
-
 type PartNumber struct {
 	startIndex int
 	endIndex   int

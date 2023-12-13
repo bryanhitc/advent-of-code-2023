@@ -8,6 +8,8 @@ import (
 	"time"
 )
 
+type Empty struct{}
+
 type Problem interface {
 	Name() string
 	FilePath() string
@@ -65,4 +67,5 @@ func main() {
 	solve(Day1{filePath: "inputs/day1/problem.txt"})
 	solve(Day2{filePath: "inputs/day2/problem.txt"})
 	solve(Day3{filePath: "inputs/day3/problem.txt"})
+	solve(Day4{filePath: "inputs/day4/problem.txt"})
 }
